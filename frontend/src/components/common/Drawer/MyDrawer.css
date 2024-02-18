@@ -1,0 +1,11 @@
+@media only screen and (min-width: 960px) {
+    .icon-label{
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 959px) {
+    .icon-label{
+        display: none;
+    }
+}

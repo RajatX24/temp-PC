@@ -1,0 +1,52 @@
+const express = require('express');
+const { User, Blog } = require('../db');
+const jwt = require('jsonwebtoken');
+const { authenticateUserJWT, user_secretKey } = require('../middleware/auth');
+
+const router = express.Router();
+
+router.post('/signup', async (req, res) => {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username });
+    if (user)
+        res.status(403).send("User already exists");
+    else {
+        const newUser = User({ username, password });
+        await newUser.save();
+        const token = jwt.sign({ username, role: 'User' }, user_secretKey);
+        res.send({ 'msg': 'user created successfully', token });
+    }
+});
+
+router.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username, password });
+    if (user) {
+        const token = jwt.sign({ username, role: 'user' }, user_secretKey);
+        res.send({ msg: "user logged in successfully", token });
+    }
+    else
+        res.status(403).send({ msg: "Invalid username or password" });
+});
+
+router.get('/me', authenticateUserJWT, (req, res) => {
+    res.send({ 'username': req.user.username });
+});
+
+router.get('/myBlogs', authenticateUserJWT, async (req, res) => {
+    const blogs = await Blog.find({ _author: req.user._id });
+    if(blogs)
+        res.send(blogs);
+    else
+        res.send([])
+});
+
+router.get('/blogsall', authenticateUserJWT, async (req, res) => {
+    console.log("reaching 1");
+    const blogs = await Blog.find();
+    console.log("reaching 2");
+    console.log(blogs)
+    res.send(blogs);
+})
+
+module.exports = router

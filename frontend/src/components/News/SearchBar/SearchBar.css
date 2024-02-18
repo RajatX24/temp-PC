@@ -1,0 +1,11 @@
+input:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px #81B64C;
+    border:1px solid #81B64C;
+}
+input:focus:hover {
+    outline: none;
+    box-shadow: 0px 0px 2px #81B64C;
+    border:1px solid #81B64C;
+    border-radius:0;
+}
