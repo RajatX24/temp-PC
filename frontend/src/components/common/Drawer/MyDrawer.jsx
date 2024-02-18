@@ -15,7 +15,6 @@ import GuildIcon from "../../../assets/Sidebar/guilds.png"
 import LogoutIcon from "../../../assets/Sidebar/logout.png"
 import '../../../colors.css'
 import './MyDrawer.css'
-import LogoutFunction from './Logout'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -39,8 +38,8 @@ export default function PermanentDrawerLeft() {
     >
       <Divider />
       <List>
-      <ListItem key={'Logo'} disablePadding>
-          <ListItemButton onClick={() => { navigate('/')}}>
+        <ListItem key={'Logo'} disablePadding>
+          <ListItemButton onClick={() => { navigate('/') }}>
             <ListItemIcon style={{ width: '100%' }}>
               <img src={Logo} alt="Project Chess" style={{ width: '95%', paddingTop: '1em', paddingBottom: '1em' }} />
             </ListItemIcon>
@@ -65,7 +64,8 @@ export default function PermanentDrawerLeft() {
 
         ))}
         <ListItem key={'SignOut'} disablePadding>
-          <ListItemButton onClick={() => { confirm('Confirm Logout?') ? LogoutFunction() : null }}>
+          <ListItemButton onClick={() => {
+            confirm('Confirm Logout?') ?(alert('ran'),localStorage.setItem('token', ''),navigate('/')): null}}>
             <ListItemIcon style={{ width: '50%' }}>
               <img src={LogoutIcon} alt="logout icon" style={{ width: '50%', paddingTop: '1em', paddingBottom: '1em' }} />
             </ListItemIcon>
@@ -73,6 +73,6 @@ export default function PermanentDrawerLeft() {
           </ListItemButton>
         </ListItem>
       </List>
-    </Drawer>
+    </Drawer >
   );
 }
