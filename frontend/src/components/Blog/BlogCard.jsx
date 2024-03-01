@@ -31,7 +31,7 @@ export default function BlogCard({ blog, full }) {
 
   return (
     <Card sx={{ width: cardWidth,marginLeft:cardMarginLeft,marginTop:cardMarginTop,border:cardBorder}}>
-      {full ? cardcontent:<CardActionArea onClick={() => navigate(`/readBlog/${blog._id}`)}>{cardcontent}</CardActionArea>
+      {full ? cardcontent:<CardActionArea onClick={() => navigate(`readBlog/${blog._id}`)}>{cardcontent}</CardActionArea>
       }
       <CardActions>
         <Button size="small" color="primary">

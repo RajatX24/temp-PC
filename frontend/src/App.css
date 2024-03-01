@@ -6,3 +6,18 @@
 body{
   background-color: #373634 ;
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: #81B64C;
+}
+
+.toast{
+  background-color: #009d1b;
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  padding:'2em'
+}

@@ -6,12 +6,14 @@ import CustomTabPanel from '../../components/Blog/CustomTabPanel';
 import useGetAllBlogs from '../../hooks/useGetAllBlogs';
 import useGetMyBlogs from '../../hooks/useGetMyBlogs';
 import './BlogHomePage.css'
+import ClipboardJS from "clipboard";
 
 function BlogHomepage() {
     const [value, setValue] = React.useState(0);
     const allBlogs = useGetAllBlogs();
     const myBlogs = useGetMyBlogs();
-
+    
+    new ClipboardJS(".copyButton");
 
     const handleChange = (event, newValue) => {
         setValue(newValue);

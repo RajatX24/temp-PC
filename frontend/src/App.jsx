@@ -1,4 +1,4 @@
-import './App.css'
+// import './App.css'
 import './colors.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from "@mui/material";
@@ -36,6 +36,7 @@ function App() {
             <Route path='/play' element={<Play />} />
           </Route>
         </Routes>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
       </ThemeProvider>
     </BrowserRouter>
   )

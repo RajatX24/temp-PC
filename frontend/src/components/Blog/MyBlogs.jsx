@@ -5,6 +5,7 @@ import NoDataFoundCard from './NoDataFoundCard'
 import AddIcon from '@mui/icons-material/Add';
 import { useNavigate } from 'react-router-dom';
 
+
 function MyBlogs({ blogs, loading }) {
     const navigate=useNavigate();
 
@@ -23,7 +24,7 @@ function MyBlogs({ blogs, loading }) {
                     <NoDataFoundCard imgLink={'https://vectorified.com/images/no-data-icon-10.png'} />
         }
         <div className='button-bar' style={{display:'flex', justifyContent:'right'}}>
-            <Fab color="primary" aria-label="add" onClick={()=>navigate("/newBlog")}>
+            <Fab color="primary" aria-label="add"  onClick={()=>navigate("newBlog")}>
                 <AddIcon />
             </Fab>
         </div>

@@ -1,18 +1,21 @@
 /* display div on left and right*/
+*{
+    color:white !important;
+}
 .blog-writer-box{
     display: flex;
     width: 100%;
     height: 80vh;
+    border-radius: 1em;
 }
 .left-side{
     width:100%;
     height: 100%;
-    background-color: rgb(233, 230, 230);
-    border: 0px;
+    background-color:#302E2B;
 }
 
 .right-side{
-    background-color: white;
+    background-color:#302E2B;
     height: 100%;
     width:100%;
     border: 0px;
@@ -26,4 +29,8 @@
 .markdown-box img{
     width: 80%;
     margin:auto;
+}
+
+.css-1v0ldv-MuiPaper-root-MuiCard-root{
+    background-color: #302E2B !important;
 }

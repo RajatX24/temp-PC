@@ -13,8 +13,8 @@ const BlogWriter = (props) => {
 
     return (
         <>
-            <div className="blog-writer-box">
-                <Card style={{ height: '100%', width: '45vw' }}><CardContent style={{ height: '100%', width: '100%', paddingBottom: '2em', display: 'flex', flexDirection: 'column' }} >
+            <div className="blog-writer-box" style={{width:'75vw'}}>
+                <Card sx={{backgroundColor:'#302E2B'}} style={{ height: '100%', width: '45vw' }}><CardContent style={{ height: '100%', width: '100%', paddingBottom: '2em', display: 'flex', flexDirection: 'column' }} >
                     <TextField onChange={(e) => setTitle(e.target.value)} value={title} style={{ width: '90%', paddingBottom: '1em' }} id="title-textfield" label="Title" variant="outlined" />
                     <TextField onChange={(e) => setImgLink(e.target.value)} value={imgLink} style={{ width: '90%', paddingBottom: '1em' }} id="image-textfield" label="Image link" variant="outlined" />
                     <textarea value={text} style={{ height: '90%', width: '90%' }} onChange={(e) => setText(e.target.value)} className="left-side"></textarea>
@@ -29,7 +29,7 @@ const BlogWriter = (props) => {
             </div>
             <div className='button-bar' style={{ display: 'flex', justifyContent: 'right', paddingTop: '2em' }}>
                 <Button variant="contained" onClick={() => { props.blog?callAPI(props.blog._id,title, imgLink, text):callAPI(title, imgLink, text) }}>Save</Button>
-                <Button variant="outlined">Cancel</Button>
+                <Button variant="outlined" onClick={()=>confirm('cancel writing blog?')?navigate('/blog'):null}>Cancel</Button>
             </div>
             {saving ? (success ? (alert('Blog Saved Successfully!'),navigate('/home')): alert('Blog not Saved')) : null}
         </>
