@@ -9,8 +9,8 @@ export default function useUpdateBlogWithId() {
     setSaving(true);
     const short=body.slice(0,50);
     //https://blog-app-three-woad.vercel.app/
-    //http://localhost:3000/admin/blogs/${blogId}
-    const url=import.meta.env.VITE_SERVER_URL+`/admin/blogs/${blogId}`;
+    //http://localhost:3000/user/blogs/${blogId}
+    const url=import.meta.env.VITE_SERVER_URL+`/user/blogs/${blogId}`;
     axios.put(url, {
       title,
       body,

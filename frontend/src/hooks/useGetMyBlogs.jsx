@@ -7,8 +7,8 @@ function useGetMyBlogs() {
 
     React.useEffect(() => {
         //https://blog-app-three-woad.vercel.app/
-        //http://localhost:3000/admin/myBlogs
-        const url=import.meta.env.VITE_SERVER_URL+`/admin/myBlogs`;
+        //http://localhost:3000/user/myBlogs
+        const url=import.meta.env.VITE_SERVER_URL+`/user/myBlogs`;
         axios.get(url, {
             headers: { 'Authorization': localStorage.getItem('token') }
         })

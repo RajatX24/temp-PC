@@ -17,7 +17,7 @@ const blogSchema = new mongoose.Schema({
     body: String,
     short:String,
     imageLink: String,
-    _author:{ type: mongoose.Schema.Types.ObjectId, ref: 'Admin' }
+    _author:{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
 //creating mongoose models

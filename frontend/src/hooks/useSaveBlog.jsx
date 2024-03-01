@@ -9,8 +9,8 @@ export default function useSaveBlog() {
     setSaving(true);
     const short = body.slice(0, 50)
     //https://blog-app-three-woad.vercel.app/
-    //http://localhost:3000/admin/blogs/newBlog
-    const url=import.meta.env.VITE_SERVER_URL+`/admin/blogs/newBlog`;
+    //http://localhost:3000/user/blogs/newBlog
+    const url=import.meta.env.VITE_SERVER_URL+`/user/blogs/newBlog`;
     axios.post(url, {
       title,
       body,

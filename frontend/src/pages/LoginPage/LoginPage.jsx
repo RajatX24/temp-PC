@@ -18,8 +18,8 @@ function LoginPage() {
                 console.log(usr);
                 console.log(pwd);
                 //https://blog-app-three-woad.vercel.app/
-                //http://localhost:3000/admin/login
-                const url=import.meta.env.VITE_SERVER_URL+`/admin/login`;
+                //http://localhost:3000/user/login
+                const url=import.meta.env.VITE_SERVER_URL+`/user/login`;
                 axios.post(url, {
                     username: usr,
                     password: pwd,

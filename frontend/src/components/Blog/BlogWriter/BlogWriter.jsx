@@ -31,7 +31,8 @@ const BlogWriter = (props) => {
                 <Button variant="contained" onClick={() => { props.blog?callAPI(props.blog._id,title, imgLink, text):callAPI(title, imgLink, text) }}>Save</Button>
                 <Button variant="outlined" onClick={()=>confirm('cancel writing blog?')?navigate('/blog'):null}>Cancel</Button>
             </div>
-            {saving ? (success ? (alert('Blog Saved Successfully!'),navigate('/home')): alert('Blog not Saved')) : null}
+            {/* {saving ? (success ? (alert('Blog Saved Successfully!'),navigate('/blog')):null) : null} */}
+            {success ? (alert('Blog Saved Successfully!'),navigate('/blog')):null}
         </>
     )
 }

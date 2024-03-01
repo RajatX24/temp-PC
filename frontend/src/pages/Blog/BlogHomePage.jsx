@@ -28,8 +28,6 @@ function BlogHomepage() {
 
     return <>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Typography variant='h3' style={{ marginTop: '5vh' }}>📖 Blogs</Typography>
-
             <Tabs value={value} onChange={handleChange}>
                 <Tab label="My Feed" {...a11yProps(0)} />
                 <Tab label="My Blogs" {...a11yProps(1)} />

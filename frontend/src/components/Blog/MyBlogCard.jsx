@@ -50,7 +50,10 @@ export default function BlogCard({ blog }) {
                 <Button size="small" color="primary" onClick={() => {
                     const ans = confirm('Do you want to permanently delete this blog?');
                     if (ans)
+                    {
                         callAPI(blog._id);
+                        navigate('/')
+                    }
                 }}>
                     Delete
                 </Button>

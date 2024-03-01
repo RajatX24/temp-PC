@@ -85,7 +85,7 @@ router.delete('/blogs/:id', authenticateUserJWT, async (req, res) => {
 });
 
 router.get('/myBlogs', authenticateUserJWT, async (req, res) => {
-    const blogs = await Blog.find({ _author: req.admin._id });
+    const blogs = await Blog.find({ _author: req.user._id });
     if(blogs)
         res.send(blogs);
     else

@@ -12,6 +12,7 @@ import Home from './pages/Home.jsx'
 import News from './pages/News.jsx'
 import Play from './pages/Play.jsx'
 
+import BlogPageContainer from "./pages/Blog/BlogPageContainer.jsx";
 import BlogHomepage from "./pages/Blog/BlogHomePage.jsx";
 import CreateNewBlogPage from "./pages/Blog/CreateNewBlogPage.jsx";
 import EditBlogPage from "./pages/Blog/EditBlogPage.jsx";
@@ -25,7 +26,7 @@ function App() {
         <Routes>
           <Route index element={<LoginPage />} />
           <Route path='/' element={<LoggedInApp />}>
-            <Route path='/blog' element={<BlogHomepage />} />
+            <Route path='/blog' element={<BlogPageContainer/>} />
             <Route path='/blog/newBlog' element={<CreateNewBlogPage />} />
             <Route path='/blog/editBlog/:blogId' element={<EditBlogPage />} />
             <Route path='/blog/readBlog/:blogId' element={<ReadBlogPage />} />

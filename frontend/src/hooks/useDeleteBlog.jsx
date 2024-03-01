@@ -8,8 +8,8 @@ export default function useDeleteBlog() {
   async function callAPI(blogId) {
     setDeleting(true);
     //https://blog-app-three-woad.vercel.app/
-    //http://localhost:3000/admin/blogs/${blogId}
-    const url=import.meta.env.VITE_SERVER_URL+`/admin/blogs/${blogId}`;
+    //http://localhost:3000/user/blogs/${blogId}
+    const url=import.meta.env.VITE_SERVER_URL+`/user/blogs/${blogId}`;
 
     axios.delete(url, {
       headers: { 'Authorization': localStorage.getItem('token') }
