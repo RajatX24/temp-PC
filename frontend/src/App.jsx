@@ -11,6 +11,7 @@ import Guild from './pages/Guild.jsx'
 import Home from './pages/Home.jsx'
 import News from './pages/News.jsx'
 import Play from './pages/Play.jsx'
+import Landing from './pages/Landing.jsx'
 
 import BlogPageContainer from "./pages/Blog/BlogPageContainer.jsx";
 import BlogHomepage from "./pages/Blog/BlogHomePage.jsx";
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route index element={<LoginPage />} />
           <Route path='/' element={<LoggedInApp />}>
+            <Route path='/landing' element={<Landing/>} />
             <Route path='/blog' element={<BlogPageContainer/>} />
             <Route path='/blog/newBlog' element={<CreateNewBlogPage />} />
             <Route path='/blog/editBlog/:blogId' element={<EditBlogPage />} />
