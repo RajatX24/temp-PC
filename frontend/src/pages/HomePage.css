@@ -1,0 +1,7 @@
+.Container {
+  height: 100vh;
+  display: flex;
+  background-image: url("../assets/loginbg.png");
+  background-size: cover;
+  background-position: center;
+}

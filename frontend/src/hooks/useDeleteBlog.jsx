@@ -1,5 +1,5 @@
-import axios from 'axios'
-import React from 'react'
+import axios from "axios";
+import React from "react";
 
 export default function useDeleteBlog() {
   const [deleting, setDeleting] = React.useState(null);
@@ -9,11 +9,15 @@ export default function useDeleteBlog() {
     setDeleting(true);
     //https://blog-app-three-woad.vercel.app/
     //http://localhost:3000/user/blogs/${blogId}
-    const url=import.meta.env.VITE_SERVER_URL+`/user/blogs/${blogId}`;
+    const url = import.meta.env.VITE_SERVER_URL + `/user/blogs/${blogId}`;
 
-    axios.delete(url, {
-      headers: { 'Authorization': localStorage.getItem('token') }
-    })
+    axios
+      .delete(url, {
+        headers: {
+          Authorization:
+            "Bearer " + JSON.parse(localStorage.getItem("userInfo")).token,
+        },
+      })
       .then(function (response) {
         console.log(response);
         setSuccess(true);

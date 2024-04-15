@@ -1,8 +1,11 @@
 import React from "react";
+import { ChatProvider } from "../Context/ChatProvider.jsx";
+import ChatsPage from "./Chat/ChatsPage.jsx";
 
-export default function Chat()
-{
-    return <>
-    <h1>Chat Page</h1>
-    </>
+export default function Chat() {
+  return (
+    <ChatProvider>
+      <ChatsPage />
+    </ChatProvider>
+  );
 }

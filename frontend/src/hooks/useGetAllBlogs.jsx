@@ -11,7 +11,10 @@ function useGetAllBlogs() {
     const url = import.meta.env.VITE_SERVER_URL + `/user/blogs`;
     axios
       .get(url, {
-        headers: { Authorization: localStorage.getItem("token") },
+        headers: {
+          Authorization:
+            "Bearer " + JSON.parse(localStorage.getItem("userInfo")).token,
+        },
       })
       .then(function (response) {
         console.log("AllBlogs=>");
